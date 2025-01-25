@@ -36,3 +36,37 @@ desktop.ini
 
 # Git
 *.swp
+
+# Jupyter Notebook checkpoints
+*.ipynb_checkpoints/
+
+# Build artifacts
+dist/
+build/
+
+# Testing artifacts
+*.coverage
+htmlcov/
+
+# Environment-specific files
+local_settings.py
+
+# Node modules
+node_modules/
+music_controller/node_modules/
+
+# Documentation files
+docs/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Cache files
+cache/
+
+# Configuration files
+config/local.yml
+
+# Secrets
+secrets/
