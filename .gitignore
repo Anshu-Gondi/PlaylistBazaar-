@@ -52,8 +52,7 @@ htmlcov/
 local_settings.py
 
 # Node modules
-node_modules/
-music_controller/node_modules/
+music_controller/frontend/node_modules/
 
 # Documentation files
 docs/
