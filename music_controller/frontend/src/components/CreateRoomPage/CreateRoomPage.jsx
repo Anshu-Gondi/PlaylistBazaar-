@@ -1,5 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function CreateRoomPage() {
@@ -9,9 +19,8 @@ function CreateRoomPage() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         axios
-            .post("http://127.0.0.1:8000/api/create-room/", { // Updated API URL
+            .post("http://127.0.0.1:8000/api/create-room/", {
                 guest_can_pause: guestCanPause,
                 votes_to_skip: votesToSkip,
             })
@@ -25,32 +34,71 @@ function CreateRoomPage() {
     };
 
     return (
-        <div>
-            <h1>Create Room</h1>
-            {message && <p>{message}</p>}
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Allow Guests to Pause:
-                    <input
-                        type="checkbox"
-                        checked={guestCanPause}
-                        onChange={(e) => setGuestCanPause(e.target.checked)}
-                    />
-                </label>
-                <br />
-                <label>
-                    Votes Required to Skip:
-                    <input
+        <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={12}>
+                <Typography component="h4" variant="h4" style={{ textAlign: "center" }}>
+                    Create A Room
+                </Typography>
+            </Grid>
+            {message && (
+                <Grid item xs={12}>
+                    <Typography color="secondary" style={{ textAlign: "center" }}>
+                        {message}
+                    </Typography>
+                </Grid>
+            )}
+            <Grid item xs={12}>
+                <FormControl component="fieldset">
+                    <FormHelperText style={{ textAlign: "center" }}>
+                        Guest Control of Playback State
+                    </FormHelperText>
+                    <RadioGroup
+                        row
+                        value={guestCanPause.toString()}
+                        onChange={(e) => setGuestCanPause(e.target.value === "true")}
+                        style={{ justifyContent: "center" }}
+                    >
+                        <FormControlLabel
+                            value="true"
+                            control={<Radio color="primary" />}
+                            label="Play/Pause"
+                        />
+                        <FormControlLabel
+                            value="false"
+                            control={<Radio color="secondary" />}
+                            label="No Control"
+                        />
+                    </RadioGroup>
+                </FormControl>
+            </Grid>
+            <Grid item xs={12}>
+                <FormControl>
+                    <TextField
+                        required
                         type="number"
                         value={votesToSkip}
                         onChange={(e) => setVotesToSkip(Number(e.target.value))}
-                        min="1"
+                        inputProps={{
+                            min: 1,
+                            style: { textAlign: "center" },
+                        }}
                     />
-                </label>
-                <br />
-                <button type="submit">Create Room</button>
-            </form>
-        </div>
+                    <FormHelperText style={{ textAlign: "center" }}>
+                        Votes Required To Skip Song
+                    </FormHelperText>
+                </FormControl>
+            </Grid>
+            <Grid item xs={12}>
+                <Button color="primary" variant="contained" onClick={handleSubmit}>
+                    Create A Room
+                </Button>
+            </Grid>
+            <Grid item xs={12}>
+                <Button color="secondary" variant="contained" component={Link} to="/">
+                    Back
+                </Button>
+            </Grid>
+        </Grid>
     );
 }
 

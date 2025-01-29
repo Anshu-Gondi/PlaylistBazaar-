@@ -1,0 +1,137 @@
+/* Global Styles */
+body {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center; /* Ensures all text elements are centered */
+}
+
+/* Centered Container */
+.MuiGrid-container {
+    max-width: 500px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers content horizontally */
+    justify-content: center; /* Centers content vertically */
+}
+
+/* Heading */
+h4 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Buttons */
+.MuiButton-containedPrimary, 
+.MuiButton-containedSecondary {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+.MuiButton-containedPrimary {
+    background-color: #ff9800 !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.3s ease;
+}
+
+.MuiButton-containedPrimary:hover {
+    background-color: #e68900 !important;
+}
+
+.MuiButton-containedSecondary {
+    background-color: #f44336 !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.3s ease;
+}
+
+.MuiButton-containedSecondary:hover {
+    background-color: #d32f2f !important;
+}
+
+/* Form Controls */
+.MuiFormControl-root, 
+.MuiTextField-root {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+.MuiTextField-root {
+    background: white;
+    border-radius: 5px;
+}
+
+/* Form Labels */
+.MuiFormControlLabel-label {
+    color: white;
+    font-weight: bold;
+}
+
+/* Radio Button Group */
+.MuiRadioGroup-root {
+    display: flex;
+    justify-content: center;
+}
+
+/* Radio Buttons */
+.MuiRadio-root {
+    color: #ff9800 !important;
+}
+
+/* Centered Message Text */
+.MuiTypography-colorSecondary {
+    font-weight: bold;
+    color: #ffcc00 !important;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .MuiGrid-container {
+        width: 95%;
+        padding: 30px;
+    }
+
+    h4 {
+        font-size: 1.6rem;
+    }
+
+    .MuiButton-containedPrimary, 
+    .MuiButton-containedSecondary {
+        max-width: 280px;
+        font-size: 0.9rem;
+    }
+
+    .MuiTextField-root {
+        max-width: 280px;
+    }
+}
