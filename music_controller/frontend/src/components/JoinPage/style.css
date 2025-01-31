@@ -1,0 +1,151 @@
+/* Base styles for the Join a Room section */
+.join-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Styling for the header */
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Spacing between heading and input */
+}
+
+/* Input and button container */
+.input-container {
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Vertically align items in the center */
+    gap: 10px; /* Space between input and button */
+}
+
+/* Room list section */
+.room-list-container {
+    max-height: 400px; /* Increased height to show more rooms */
+    width: 100%;
+    overflow-y: auto;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.room-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.room-item {
+    margin-bottom: 15px; /* Increased margin between items */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #333; /* Dark text for better readability */
+}
+
+.room-item:hover {
+    background-color: #f1f1f1; /* Slight hover effect */
+}
+
+.room-item button {
+    padding: 5px 15px; /* Slightly larger button */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.room-item button:hover {
+    background-color: #218838;
+}
+
+/* Fixed button and input for joining a room */
+.input-container input {
+    padding: 10px;
+    width: 250px;
+    font-size: 14px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Back button styling */
+.back-btn {
+    margin-top: 20px;
+    background-color: #6c757d;
+}
+
+.back-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    /* For tablets and smaller devices */
+    .input-container {
+        flex-direction: column; /* Stack input and button vertically */
+        gap: 10px; /* Adjust space between input and button */
+    }
+
+    .input-container input {
+        width: 200px; /* Reduce input width on smaller screens */
+    }
+
+    .btn {
+        padding: 8px 16px; /* Adjust button padding */
+    }
+
+    .room-item {
+        margin-bottom: 10px; /* Reduce space between room items */
+    }
+
+    .room-list-container {
+        max-height: 300px; /* Reduce the height of room list */
+    }
+
+    .header-container {
+        margin-bottom: 0; /* Reduce spacing on small screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* For mobile devices */
+    .input-container input {
+        width: 180px; /* Further reduce input width */
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .btn {
+        padding: 6px 12px; /* Adjust button size */
+    }
+
+    .room-list-container {
+        max-height: 250px; /* Further reduce height for mobile */
+    }
+
+    .back-btn {
+        font-size: 14px; /* Smaller font size for back button */
+        padding: 8px 15px; /* Adjust padding for mobile */
+    }
+}
